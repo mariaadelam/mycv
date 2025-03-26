@@ -75,11 +75,11 @@ h6 {
   color: $color_2;
 }
 a {
-  color: $color_2;
+  color: var(--color_2);
   text-decoration: none;
   transition: all 0.5s ease-in-out;
   &:hover {
-    color: $color_3;
+    color: $vueColor;
     text-decoration: none;
     transition: all 0.5s ease-in-out;
   }
