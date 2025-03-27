@@ -161,18 +161,23 @@ import GLightbox from 'glightbox';
    * Intro type effect
    */
 
-  const typed = select('.typed')
-  if (typed) {
-      let typed_strings = typed.getAttribute('data-typed-items')
-      typed_strings = typed_strings.split(',')
-      new Typed('.typed', {
-          strings: typed_strings,
-          loop: true,
-          typeSpeed: 100,
-          backSpeed: 50,
-          backDelay: 2000
-      });
-  }
+    setTimeout(function () {
+        // const typed = select('.typed')
+        const typed = document.getElementById('typed');
+        if (typed) {
+
+            let typed_strings = typed.getAttribute('data-typed-items');
+            console.log('typed', typed_strings)
+            typed_strings = typed_strings.split(',')
+            new Typed('.typed', {
+                strings: typed_strings,
+                loop: true,
+                typeSpeed: 100,
+                backSpeed: 50,
+                backDelay: 2000
+            });
+        }
+    }, 2000);
 
   /**
    * Initiate portfolio lightbox 

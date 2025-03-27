@@ -16,7 +16,9 @@ const favicon = path.resolve(paths.source, 'images', 'favicon.ico');
 const myHeader = fs.readFileSync(paths.source + '/views/header.html');
 const myBanner = fs.readFileSync(paths.source + '/views/banner.html');
 const myAbout = fs.readFileSync(paths.source + '/views/about.html');
+const myExp = fs.readFileSync(paths.source + '/views/experience.html');
 const myPort = fs.readFileSync(paths.source + '/views/portfolio.html');
+const myGHA = fs.readFileSync(paths.source + '/views/githubapi.html');
 const myContact = fs.readFileSync(paths.source + '/views/contact.html');
 const myFooter = fs.readFileSync(paths.source + '/views/footer.html');
 module.exports = {
@@ -38,7 +40,9 @@ module.exports = {
             myHeader: myHeader,
             myBanner: myBanner,
             myAbout: myAbout,
+            myExperience: myExp,
             myPortfolio: myPort,
+            myGitHubApi: myGHA,
             myContact: myContact,
             myFooter: myFooter,
             template: './src/index.html',
@@ -53,6 +57,15 @@ module.exports = {
                 {
                     from: path.resolve(paths.source, 'images'),
                     to: path.resolve(paths.output, 'images'),
+                    toType: 'dir',
+                    globOptions: {
+                        ignore: ['*.DS_Store', 'Thumbs.db'],
+                    },
+                },
+                //move image folder
+                {
+                    from: path.resolve(paths.source, 'lang'),
+                    to: path.resolve(paths.output, 'lang'),
                     toType: 'dir',
                     globOptions: {
                         ignore: ['*.DS_Store', 'Thumbs.db'],
